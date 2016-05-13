@@ -1,0 +1,123 @@
+body{
+	margin: auto;
+	padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+    max-width: auto;
+}
+.header{
+	height: 250px;
+	background: url("../img/fon5.jpg");
+	color: white;
+	padding-left: 20px;
+    vertical-align: middle;
+}
+.header p{
+    display: block;
+    color: #861d20;
+    font-size: 2em;
+    text-align: right;
+    vertical-align: middle;
+    padding-right: 0;
+    margin: 0;
+}
+.header .row .col-md-4{
+    display: inline-block;
+    vertical-align: middle;
+	width: 370px;
+    height: 200px;
+    padding-top: 35px;
+    padding-left: 0;
+    padding-right: 0;
+}
+.header .row .col-md-4 .img{
+    display: inline-block;
+    width: 10%;
+    float: left;
+    position: relative;
+    right: 5px;
+    top: 20px;
+}
+/**.header .row .col-md-4 p:nth-of-type(4){
+    font-size: 1.5em;
+    text-align: right;
+}                  **/
+
+#logo{
+	float: left;
+	padding-right: 20px;
+}
+.topmenu{
+	display: flex;
+}
+.topmenu a{
+    color: #861d20;
+    font-size: 1.4em;
+	flex: 1;
+	display: block;
+	text-align: center;
+	background: url(../img/fon9.jpg);
+	text-decoration: none;
+	padding: 10px 0;
+    border-top: solid 1px #861d20;
+    border-bottom: solid 1px #861d20;
+}
+.topmenu a:hover{
+	background: #861d20;
+	color: lightgray;
+}
+/**.content{
+	-moz-column-count: 2;
+	-moz-column-rule: 1px black dotted;
+	-moz-column-gap: 2em;
+	-webkit-column-count: 2;
+	-webkit-column-rule: 1px black dotted;
+	-webkit-column-gap: 2em;
+	column-count: 2;
+	column-rule: 1px black dotted;
+	column-gap: 2em;
+}               **/
+.footer{
+	padding: 50px 0;
+	background: url(../img/fon5.jpg);
+	text-align: center;
+    border-top: solid 1px #861d20;
+
+}
+.menu .col-md-2 h3{
+    text-align: center;
+}
+.menu{
+    margin-top: 20px;
+}
+.menu .col-md-8 a img{
+    width: 180px;
+    padding: 0;
+    border: solid 1px #861d20;
+}
+
+.menu .col-md-8{
+    text-align: center;
+    display: table;
+}
+.napolnenie{
+    background: url(../img/fon4.jpg);
+    width: auto;
+    height: 800px;
+}
+
+
+
+
+
+
+@media screen and (max-width: 768px){
+.header{
+	height: 100px;
+}
+#logo{
+	display: none;
+	}
+.topmenu{
+	flex-direction: column;
+}
+}
