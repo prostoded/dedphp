@@ -40,10 +40,15 @@ if($_POST){
 				echo "</span><br/><br/>";
 			}
 		}else{
-		echo 'OK';
+		//echo 'OK';
+		$user=mysqli_fetch_array($cat);
+		//echo"<pre>";
+		//print_r($user);
+		//echo"</pre>";
+		$_SESSION['id']=$user['id'];
 		?>
 	<script>
-		document.location.href='auth.php';
+		document.location.href='cabinet.php';
 	</script>
 	<?php
 		}

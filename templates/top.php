@@ -1,4 +1,7 @@
-<?php require_once('config/config.php');?>
+<?php 
+	$scripts=array('/media/ckeditor/ckeditor.js');
+	session_start();
+	require_once('config/config.php');?>
 <!DOCTYPE HTML>
 <html>
 
@@ -11,6 +14,15 @@
 		<link rel="stylesheet" type="text/css" href="media/bootstrap/css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="media/css/style.css"/>
         <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700italic,700,500italic,500,400italic,300italic,300&amp;subset=latin,cyrillic" rel="stylesheet" type="text/css">
+		<?php
+			if($scripts){
+				foreach($scripts as $one){
+		?>
+		<script src='<?=$one;?>'> </script>
+		<?php
+		}
+		}
+		?>
         </head>
 
 	<body>
@@ -45,7 +57,9 @@
 					if(!$cat){
 						exit($query);
 					}
+					$catalogs=array();
 					while($cats=mysqli_fetch_array($cat)){
+					$catalogs[$cats['id']]=$cats['name'];
 					?>
 						<a href="product.php?id=<?=$cats['id']?>" class="btn btn-default btn-lg btn-block">
 							<?=$cats['name'];?>
