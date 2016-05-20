@@ -17,7 +17,7 @@
 
 		</div>
         </div>
-        <!--<br style="clear:both">-->
+        <br style="clear:both">
 		<footer class="footer">
 			&copy; Mikhalkevich@ya.ru
 		</footer>

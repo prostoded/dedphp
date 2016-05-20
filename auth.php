@@ -45,7 +45,13 @@ if($_POST){
 		//echo"<pre>";
 		//print_r($user);
 		//echo"</pre>";
+		
 		$_SESSION['id']=$user['id'];
+		$query = "UPDATE users SET lastvisit = NOW() WHERE id = ".$user['id'];
+		$cat = mysqli_query($dbcnx, $query);
+		 if(!$cat){
+			exit($query);
+		}
 		?>
 	<script>
 		document.location.href='cabinet.php';
