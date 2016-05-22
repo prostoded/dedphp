@@ -1,5 +1,5 @@
 <?php 
-	$scripts=array('/media/ckeditor/ckeditor.js');
+	$scripts=array('/media/ckeditor/ckeditor.js', '/media/js/delete.js');
 	session_start();
 	require_once('config/config.php');?>
 <!DOCTYPE HTML>

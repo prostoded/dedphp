@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
   session_start();
   $_SESSION["name"] = $_POST["name"];
@@ -25,4 +26,33 @@ $query = mysql_query("
   WHERE `id`='{$_SESSION['user_id']}'
   ");
 $date = mysql_result($query, 0);
+=======
+<?php
+  session_start();
+  $_SESSION["name"] = $_POST["name"];
+  $_SESSION["email"] = $_POST["email"];
+  header("Location: ".$_SERVER["HTTP_REFERER"]);
+  exit;
+?>
+
+<form name="myform" action="request.php" method="post">
+  <input type="text" name="name" value="<?=$_SESSION["name"]?>" />
+  <input type="text" name="email" value="<?=$_SESSION["email"]?>" />
+  <input type="password" name="password" />
+</form>
+
+
+
+_________________
+_________________
+_________________
+
+
+$query = mysql_query("
+  SELECT DATE_FORMAT(`last_visit_date`, '%d.%m.%Y %H:%i:%s') as `date`
+  FROM`table_name`
+  WHERE `id`='{$_SESSION['user_id']}'
+  ");
+$date = mysql_result($query, 0);
+>>>>>>> 55d6659babc9fd58c0dbbae1bb01c0de86b33cdc
 echo "Ваш последний визит был: ".$date;

@@ -1,4 +1,4 @@
-<?php require_once('templates/top.php'); 
+<?php require_once('templates/top.php');
 if($_POST){
 		//echo "<pre>";
 		//print_r($_POST);
@@ -45,7 +45,13 @@ if($_POST){
 		//echo"<pre>";
 		//print_r($user);
 		//echo"</pre>";
+		
 		$_SESSION['id']=$user['id'];
+		$query = "UPDATE users SET lastvisit = NOW() WHERE id = ".$user['id'];
+		$cat = mysqli_query($dbcnx, $query);
+		 if(!$cat){
+			exit($query);
+		}
 		?>
 	<script>
 		document.location.href='cabinet.php';
@@ -57,10 +63,13 @@ if($_POST){
 
 ?>
 <form action="auth.php" class="form-horizontal"  method="POST">
+    <?php  if(isset($_POST['email'])){
+            echo $_POST[''];
+        }?>
   <div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 control-label" >Email</label>
+    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
     <div class="col-sm-8">
-      <input name="email" type="email" class="form-control" id="inputEmail3" placeholder="Email">
+      <input name="email" type="email" class="form-control" id="inputEmail3" placeholder="Email" value="<?=$_POST['email']?>">
     </div>
   </div>
   <div class="form-group">

@@ -49,10 +49,13 @@ if($_POST){
 ?>
 	
 <form action="reg.php" class="form-horizontal"  method="POST">
+    <?php  if(isset($_POST['name'], $_POST['email'])){
+            echo $_POST[''];
+        }?>
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label" >Email</label>
     <div class="col-sm-8">
-      <input name="email" type="email" class="form-control" id="inputEmail3" placeholder="Email">
+      <input name="email" type="email" class="form-control" id="inputEmail3" placeholder="Email" value="<?=$_POST['email']?>">
     </div>
   </div>
   <div class="form-group">
@@ -70,7 +73,7 @@ if($_POST){
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
     <div class="col-sm-8">
-      <input name="name" type="text" class="form-control" id="inputEmail3" placeholder="Name">
+      <input name="name" type="text" class="form-control" id="inputEmail3" placeholder="Name" value="<?=$_POST['name']?>">
     </div>
   </div>
   

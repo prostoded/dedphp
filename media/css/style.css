@@ -3,6 +3,7 @@ body{
 	padding: 0;
     font-family: 'Ubuntu', sans-serif;
     max-width: auto;
+    background-image: url(../img/fon4.jpg);
 }
 .header{
 	height: 250px;
