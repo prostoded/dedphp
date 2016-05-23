@@ -73,7 +73,7 @@ if($_SESSION['id']){
   <?php 
 	foreach($catalogs as $key => $value){
 	?>
-		<option value ='<?=$key?>'>
+		<option value ='<?=$key?>' <?=($_POST['cat']==$key)?'selected':''?>>
 		<?=$value?>
 		</option>
 		<?php
@@ -122,10 +122,10 @@ if($_SESSION['id']){
 			$picture = "/media/img/photos_3832.png";
 		}
 		$url="?id=".$tovs['id'];
-		if($tovs['showhide']='show'){
+		if($tovs['showhide']=='show'){
 			$showhide="<a href='tovshide.php$url' class='btn btn-success btn-block'>Скрыть</a>";
 		}else{
-			$showhide="<a href='tovshow.php$url' class='btn btn-primer btn-block'>Отобразить</a>";
+			$showhide="<a href='tovsshow.php$url' class='btn btn-primary btn-block'>Отобразить</a>";
 		}
 		?>
 			<tr>
