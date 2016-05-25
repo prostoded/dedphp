@@ -1,6 +1,4 @@
-<?php 
-$scripts=array('/media/ckeditor/ckeditor.js', '/media/js/delete.js');
-require_once('templates/top.php');
+<?php require_once('templates/top.php');
 if($_SESSION['id']){
 	if($_POST){
 		//print_r($_POST);
@@ -105,7 +103,7 @@ if($_SESSION['id']){
   <button type="submit" class="btn btn-default">Submit</button></form>
 	
 <?php
-	$query = "SELECT * FROM products WHERE user_id=".$_SESSION['id']." ORDER BY id DESC";
+	$query = "SELECT * FROM products WHERE cat_id = ".$_GET['id']." AND user_id = ".$_SESSION['id'];
 	$cat = mysqli_query($dbcnx, $query);
 		if(!$cat){
 			exit($query);

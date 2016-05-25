@@ -1,5 +1,5 @@
 <?php 
-	$scripts=array('/media/ckeditor/ckeditor.js', '/media/js/delete.js');
+	
 	session_start();
 	require_once('config/config.php');?>
 <!DOCTYPE HTML>
@@ -14,6 +14,7 @@
 		<link rel="stylesheet" type="text/css" href="media/bootstrap/css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="media/css/style.css"/>
         <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700italic,700,500italic,500,400italic,300italic,300&amp;subset=latin,cyrillic" rel="stylesheet" type="text/css">
+		<script src="media/js/jquery-1.12.4.min.js"></script>
 		<?php
 			if($scripts){
 				foreach($scripts as $one){
