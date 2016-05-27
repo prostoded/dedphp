@@ -47,7 +47,8 @@
 			<a href="#">Каталог</a>
 			<a href="index.php?url=vacancy">Вакансии</a>
 			<a href="index.php?url=contacts">Контакты</a>
-			<a href="#">Обратная связь</a>
+			<a href="basket.php">Корзина</a>
+			
 		</nav>
 		<div class="menu">
 			<div class="col-md-2">

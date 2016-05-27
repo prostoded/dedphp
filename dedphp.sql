@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3307
--- Время создания: Май 25 2016 г., 11:46
+-- Время создания: Май 27 2016 г., 11:37
 -- Версия сервера: 5.5.38-log
 -- Версия PHP: 5.5.13
 
@@ -73,6 +73,33 @@ INSERT INTO `maintexts` (`id`, `name`, `body`, `url`, `lang`, `showhide`, `putda
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `orders`
+--
+
+CREATE TABLE IF NOT EXISTS `orders` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `name` tinytext NOT NULL,
+  `email` tinytext NOT NULL,
+  `body` text NOT NULL,
+  `status` tinytext NOT NULL,
+  `address` tinytext NOT NULL,
+  `phone` tinytext NOT NULL,
+  `comment` tinytext NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Дамп данных таблицы `orders`
+--
+
+INSERT INTO `orders` (`id`, `user_id`, `name`, `email`, `body`, `status`, `address`, `phone`, `comment`) VALUES
+(1, 0, 'cvncv', 'ncvnc@jhj.ru', 'a:1:{i:12;s:1:"1";}', 'NEW', '', '4534', ''),
+(2, 0, 'ad', 'asgfas@fd.gfd', 'a:3:{i:6;s:1:"1";i:11;s:1:"1";i:12;s:1:"1";}', 'NEW', '', '4363', '');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `products`
 --
 
@@ -132,7 +159,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `name`, `blockunblock`, `date_reg`, `lastvisit`) VALUES
-(1, 're@fs.ru', '123', '123', 'unblock', '2016-05-16', '2016-05-25 11:42:29'),
+(1, 're@fs.ru', '123', '123', 'unblock', '2016-05-16', '2016-05-27 09:01:13'),
 (2, 're@fd.ru', '123', '123', 'unblock', '2016-05-16', '2016-05-16 10:21:16'),
 (3, 're@fs.ru', 'name', '123', 'unblock', '2016-05-16', '2016-05-16 10:32:40'),
 (4, 're@fs.ru', 'fga', '123', 'unblock', '2016-05-16', '2016-05-16 10:36:56');

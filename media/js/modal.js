@@ -12,7 +12,7 @@ $(function(){ //Перед этой строкой ничего не писат�
 				
 				
 		
-	$('.products a').bind('click', function(e){ //Прослушка нажатия
+	$('.products .bigblock figure a').bind('click', function(e){ //Прослушка нажатия
 		e.preventDefault();
 		data=$(this).attr('data_id');
 		//console.log(data);
