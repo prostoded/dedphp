@@ -25,7 +25,7 @@
 		}
 	?>
 			<div class="bigblock"><figure>
-				<a href="#" data_id="<?=$tovs['id'];?>"><img src="<?=$picture;?>" width="200px"/></a>
+				<a href="#" data_id="<?=$tovs['id'];?>"><img src="<?=$picture;?>" width=200px/></a>
 				<a href="#" data_id="<?=$tovs['id'];?>"><h3><?=$tovs['name'];?></a></h3>
 				<div><a href="#" data_id="<?=$tovs['id'];?>">Код продукта: <?=$tovs['product_code'];?></a></div>
 				<div><a href="#" data_id="<?=$tovs['id'];?>">Цена: <b><?=$tovs['price'];?></b> <?=$tovs['currency'];?></a></div>

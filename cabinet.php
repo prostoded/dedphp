@@ -1,5 +1,5 @@
 <?php 
-$scripts=array('/media/ckeditor/ckeditor.js', '/media/js/delete.js');
+$scripts=array('/media/ckeditor/ckeditor.js', '/media/js/delete.js', '/media/js/parse_google.js');
 require_once('templates/top.php');
 if($_SESSION['id']){
 	if($_POST){
@@ -20,7 +20,7 @@ if($_SESSION['id']){
 			echo "</span><br/><br/>";
 		}
 	}else{
-		if($_FILES){
+		if($_FILES['picture']['error'] == 0){
 			//echo "<pre>";
 			//print_r($_FILES);
 			//echo "</pre>";
@@ -102,7 +102,9 @@ if($_SESSION['id']){
     <input type="file" id="exampleInputFile" name="picture">
     <p class="help-block">Example block-level help text here.</p>
   </div>
-  <button type="submit" class="btn btn-default">Submit</button></form>
+  <p><button type="submit" class="btn btn-default">Submit</button></p></form>
+  <p><a href="#" class="btn btn-default" id="google_search"> Искать картинки к товарам </a> </p>
+  <div class="result"></div>
 	
 <?php
 	$query = "SELECT * FROM products WHERE user_id=".$_SESSION['id']." ORDER BY id DESC";
