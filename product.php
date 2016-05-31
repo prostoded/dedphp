@@ -25,13 +25,13 @@
 		}
 	?>
 			<div class="bigblock"><figure>
-				<a href="#" data_id="<?=$tovs['id'];?>"><img src="<?=$picture;?>" width=200px/></a>
-				<a href="#" data_id="<?=$tovs['id'];?>"><h3><?=$tovs['name'];?></a></h3>
+				<a href="#" data_id="<?=$tovs['id'];?>"><img src="<?=$picture;?>" width=180px/></a>
+				<a href="#" data_id="<?=$tovs['id'];?>"><h4><?=$tovs['name'];?></a></h4>
 				<div><a href="#" data_id="<?=$tovs['id'];?>">Код продукта: <?=$tovs['product_code'];?></a></div>
 				<div><a href="#" data_id="<?=$tovs['id'];?>">Цена: <b><?=$tovs['price'];?></b> <?=$tovs['currency'];?></a></div>
 				
 			</figure>
-			<a href="addcart.php?id=<?=$tovs['id'];?>" class="btn btn-success btn-lg btn-block"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" text-align="center"></span></a>
+			<a href="addcart.php?id=<?=$tovs['id'];?>" class="btn btn-default btn-sm btn-block"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" text-align="center"></span></a>
             </div>			
 		<?php
 		}

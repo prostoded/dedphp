@@ -10,7 +10,7 @@
 			}
 	while($tovs = mysqli_fetch_array($cat)){
 		$str = @ereg_replace(" ", "+", $tovs['name']);
-		$url = "https://www.google.by/search?q=$str&hl=ru&biw=1280&bih=914&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjBmOTwsoHNAhVHiSwKHdylAIcQ_AUIBygB#q=%24str&hl=ru&tbm=isch&tbs=isz:m";
+		$url = "https://www.google.by/search?q=$str&client=opera&hs=ZPN&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiW5Zeo_YPNAhXK3SwKHWWMCCUQ_AUIBygB&biw=1366&bih=658";
 		echo $url."<br />";
 		echo $tovs['name']."<br/>";
 		

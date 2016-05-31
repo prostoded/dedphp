@@ -3,7 +3,6 @@ $scripts=array('/media/ckeditor/ckeditor.js', '/media/js/delete.js', '/media/js/
 require_once('templates/top.php');
 if($_SESSION['id']){
 	if($_POST){
-		//print_r($_POST);
 	
 	$error=array();
 	$filterArr=array('');
@@ -98,11 +97,10 @@ if($_SESSION['id']){
   Код продукта: <input class="form-control" type="text" placeholder="Default input" name="product_code" value="<?=$_POST['product_code']?>">
   Изображение: 
   <div class="form-group">
-    <label for="exampleInputFile">File input</label>
+    <label for="exampleInputFile"></label>
     <input type="file" id="exampleInputFile" name="picture">
-    <p class="help-block">Example block-level help text here.</p>
   </div>
-  <p><button type="submit" class="btn btn-default">Submit</button></p></form>
+  <p><button type="submit" class="btn btn-default">Отправить</button></p></form>
   <p><a href="#" class="btn btn-default" id="google_search"> Искать картинки к товарам </a> </p>
   <div class="result"></div>
 	

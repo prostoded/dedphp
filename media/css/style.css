@@ -3,7 +3,8 @@ body{
 	padding: 0;
     font-family: 'Ubuntu', sans-serif;
     max-width: auto;
-    background-image: url(../img/fon4.jpg);
+	text-align: center;
+
 }
 .header{
 	height: 250px;
@@ -78,11 +79,12 @@ body{
 	column-gap: 2em;
 }               **/
 .bigblock{
-	display: block;
-	padding: 10px;
+	display: inline-block;
 	float: left;
 	margin: 0 10px 10px 10px;
 	text-align: center;
+	width: 180px;
+	height: 300px;
 }
 figure img{
 
@@ -118,8 +120,7 @@ figure a{
     display: table;
 }
 .napolnenie{
-    background: url(../img/fon4.jpg);
-    height: 800px;
+
 }
 .modal-window{
 	position: fixed;
@@ -160,6 +161,23 @@ figure a{
 	top: 0;
 	left: 0;
 }
+.menu-block{
+	background-color: #861d20;
+	color: white;
+}
+.products{
+	padding-top: 20px;
+}
+.form-group{
+	display: block;
+	text-align: center;
+	padding: 15px;
+}
+.zakaz{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
 
 
 

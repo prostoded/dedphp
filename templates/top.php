@@ -52,7 +52,7 @@
 		</nav>
 		<div class="menu">
 			<div class="col-md-2">
-				<h3>Каталог</h3><br>
+				<h3>Каталог:</h3><br>
 				<?php $query="SELECT * FROM categories
 					WHERE showhide='show'";
 					$cat=mysqli_query($dbcnx, $query);
@@ -63,7 +63,7 @@
 					while($cats=mysqli_fetch_array($cat)){
 					$catalogs[$cats['id']]=$cats['name'];
 					?>
-						<a href="product.php?id=<?=$cats['id']?>" class="btn btn-default btn-lg btn-block">
+						<a href="product.php?id=<?=$cats['id']?>" class="btn btn-default btn-lg btn-block menu-block">
 							<?=$cats['name'];?>
 							</a>
 							<?php
