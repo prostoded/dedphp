@@ -12,6 +12,7 @@
 			name = '".$_POST['name']."',
 			body = '".$_POST['body']."',
 			price = '".$_POST['price']."',
+			cat_id = '".$_POST['cat']."',
 			product_code = '".$_POST['product_code']."'
 			WHERE id = ".$_GET['id']." AND user_id = ".$_SESSION['id'];
 			$cat=mysqli_query($dbcnx, $query);

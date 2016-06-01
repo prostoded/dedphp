@@ -1,12 +1,12 @@
 <?php require_once('templates/top.php');
-
-	if($_SESSION['id']){
-		if($_POST){
+if($_POST){
 			$error=array();
 			$filterArr=array('');
 			$error[]=(empty($_POST['name']))?"Поле Name не заполнено":'';
-			$error[]=(empty($_POST['email']))?"Поле E-mail не заполнено":'';
-			$error[]=(empty($_POST['phone']))?"Поле 'Номер телефона' не заполнено":'';
+			$error[]=(empty($_POST['email']))?"Поле Email не заполнено":'';
+			$error[]=(empty($_POST['phone']))?"Поле Phone не заполнено":'';
+
+	
 			$errors=array_diff($error, $filterArr);
 			if(!empty($errors)){
 				foreach($errors as $err){
@@ -14,8 +14,44 @@
 					echo $err;
 					echo "</span><br/><br/>";
 				}
+			}else{
+ 
+
+	foreach($_COOKIE as $key => $value){
+		$key = (int)$key;
+		if ($key > 0){
+			$arr_orders[$key] = $value;
+		}
+	}
+	$body = serialize($arr_orders);
+	$sess = ($_SESSION['id']) ? $_SESSION['id']: 0 ;
+
+	
+		$query = "INSERT INTO orders Values (
+				NULL, 
+				".$sess.",
+				'".$_POST['name']."',
+				'".$_POST['email']."',
+				'$body',
+				'NEW',
+				'".$_POST['address']."',
+				'".$_POST['phone']."',
+				'".$_POST['comment']."'
+				)";
+			$cat = mysqli_query($dbcnx, $query);
+			if(!$cat){
+				exit($query);
 			}
-			?>
+		foreach($_COOKIE as $key => $value){
+			$key = (int)$key;
+			if ($key > 0){
+				setcookie($key, null, time()-1, '/');
+			header('location:thankyoupage.php');
+			}
+		}
+	}
+}	
+?>
 					<table class="table table-bordered" width=100%>
 						<tr>
 							<th>Изображение</th>
@@ -70,7 +106,7 @@
 							<td colspan=2><?=$itogo;?></td>
 						</tr>
 					</table>
-					<form method="post" action="order.php";>
+					<form method="post" action="basket.php">
 						<div class="form-group">
 							<label for="name" class="col-sm-5 control-label" >Name:</label>
 								<div class="col-sm-4">
@@ -95,10 +131,6 @@
 							</div>
 						</div>
 					</form>
-				<?php	
-				
-	}else{
-		echo('Ошибка входа.');	
-	}
+				<?php		
 			
 require_once('templates/bottom.php');?>	

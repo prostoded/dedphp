@@ -1,4 +1,5 @@
 <?php require_once('templates/top.php');
+	
 	if ($_GET['url']){
 		$file=$_GET['url'];
 	}else{

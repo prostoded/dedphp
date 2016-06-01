@@ -3,6 +3,11 @@ $scripts=array('/media/ckeditor/ckeditor.js', '/media/js/delete.js', '/media/js/
 require_once('templates/top.php');
 if($_SESSION['id']){
 	if($_POST){
+	$_POST ['name'] = @ereg_replace('script', '<span>script</span>', $_POST ['name']);
+	$_POST ['area'] = @ereg_replace('script', '<span>script</span>', $_POST ['area']);
+	$_POST ['cat_id'] = @ereg_replace('script', '<span>script</span>', $_POST ['cat_id']);
+	$_POST ['price'] = @ereg_replace('script', '<span>script</span>', $_POST ['price']);
+	$_POST ['product_code'] = @ereg_replace('script', '<span>script</span>', $_POST ['product_code']);
 	
 	$error=array();
 	$filterArr=array('');
@@ -142,6 +147,8 @@ if($_SESSION['id']){
 				<td><a href="#" class="btn btn-warning btn-block" onclick="delete_position('adminka/tovsdel.php<?=$url?>', 'Вы действительно хотите удалить?')">Удалить</a>
 				<a href="tovsedit.php<?=$url;?>" class="btn btn-success btn-block">Редактировать</a>
 				<?=$showhide;?>
+				
+				<a href="adminka/picturedel.php<?=$url?>" class="btn btn-warning btn-block" onclick="delete_position('adminka/picturedel.php<?=$url?>', 'Вы действительно хотите удалить?')">Удалить изображение</a>
 				</td>
 			</tr>	
 		<?php
