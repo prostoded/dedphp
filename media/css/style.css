@@ -4,8 +4,14 @@ body{
     font-family: 'Ubuntu', sans-serif;
     max-width: auto;
 	text-align: center;
-	height: 800px;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	
 
+}
+*{
+	flex: 1;
 }
 .header{
 	height: 250px;
