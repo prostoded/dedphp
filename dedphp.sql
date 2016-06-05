@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Май 31 2016 г., 23:39
+-- Время создания: Июн 05 2016 г., 22:41
 -- Версия сервера: 5.5.48
 -- Версия PHP: 5.3.29
 
@@ -41,6 +41,29 @@ INSERT INTO `categories` (`id`, `name`, `parent_id`, `showhide`) VALUES
 (1, 'Обувь', 0, 'show'),
 (2, 'Одежда', 0, 'show'),
 (3, 'Аксессуары', 0, 'show');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `comments`
+--
+
+CREATE TABLE IF NOT EXISTS `comments` (
+  `id` int(11) NOT NULL,
+  `name` tinytext NOT NULL,
+  `email` tinytext NOT NULL,
+  `area` text NOT NULL,
+  `date` date NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=141 DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `comments`
+--
+
+INSERT INTO `comments` (`id`, `name`, `email`, `area`, `date`) VALUES
+(138, '', '', '', '0000-00-00'),
+(139, '', '', '', '2016-06-05'),
+(140, '', '', '', '2016-06-05');
 
 -- --------------------------------------------------------
 
@@ -182,6 +205,12 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `maintexts`
 --
 ALTER TABLE `maintexts`
@@ -214,6 +243,11 @@ ALTER TABLE `users`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT для таблицы `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=141;
 --
 -- AUTO_INCREMENT для таблицы `maintexts`
 --
