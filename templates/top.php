@@ -48,6 +48,7 @@
 			<a href="index.php?url=vacancy">Вакансии</a>
 			<a href="index.php?url=contacts">Контакты</a>
 			<a href="basket.php">Корзина</a>
+			<a href="comment.php">Отзывы</a>
 			
 		</nav>
 		<div class="menu">

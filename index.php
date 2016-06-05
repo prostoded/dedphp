@@ -9,12 +9,10 @@
 	$query="SELECT * FROM maintexts WHERE url='$file'";
 	$adr=mysqli_query($dbcnx, $query);
 	if(!$adr){
-		exit($query); // Убрать $query из exit'a
+		exit($query); 
 		}
 		$str=mysqli_fetch_array($adr);
-		//echo"<pre>";
-		//print_r($str);
-		//echo"</pre>";
+
 	
 ?>
 <h3><?php echo $str['name'];?></h3><br>
