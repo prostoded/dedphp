@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.15.5
+-- version 4.0.10
 -- http://www.phpmyadmin.net
 --
--- Хост: 127.0.0.1:3306
--- Время создания: Июн 05 2016 г., 22:41
--- Версия сервера: 5.5.48
--- Версия PHP: 5.3.29
+-- Хост: 127.0.0.1:3307
+-- Время создания: Июн 06 2016 г., 11:38
+-- Версия сервера: 5.5.38-log
+-- Версия PHP: 5.5.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- База данных: `dedphp`
@@ -27,11 +27,12 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `categories` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` tinytext NOT NULL,
   `parent_id` int(11) NOT NULL,
-  `showhide` enum('show','hide') NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  `showhide` enum('show','hide') NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Дамп данных таблицы `categories`
@@ -49,12 +50,13 @@ INSERT INTO `categories` (`id`, `name`, `parent_id`, `showhide`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `comments` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` tinytext NOT NULL,
   `email` tinytext NOT NULL,
   `area` text NOT NULL,
-  `date` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=141 DEFAULT CHARSET=utf8;
+  `date` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=142 ;
 
 --
 -- Дамп данных таблицы `comments`
@@ -63,7 +65,8 @@ CREATE TABLE IF NOT EXISTS `comments` (
 INSERT INTO `comments` (`id`, `name`, `email`, `area`, `date`) VALUES
 (138, '', '', '', '0000-00-00'),
 (139, '', '', '', '2016-06-05'),
-(140, '', '', '', '2016-06-05');
+(140, '', '', '', '2016-06-05'),
+(141, 'jh', 'jh@ds.gf', '<p>gf</p>\r\n', '2016-06-06');
 
 -- --------------------------------------------------------
 
@@ -72,14 +75,15 @@ INSERT INTO `comments` (`id`, `name`, `email`, `area`, `date`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `maintexts` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` tinytext NOT NULL,
   `body` text NOT NULL,
   `url` tinytext NOT NULL,
   `lang` enum('Ru','En','De') NOT NULL DEFAULT 'Ru',
   `showhide` enum('show','hide') NOT NULL DEFAULT 'show',
-  `putdate` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+  `putdate` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Дамп данных таблицы `maintexts`
@@ -98,7 +102,7 @@ INSERT INTO `maintexts` (`id`, `name`, `body`, `url`, `lang`, `showhide`, `putda
 --
 
 CREATE TABLE IF NOT EXISTS `orders` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `name` tinytext NOT NULL,
   `email` tinytext NOT NULL,
@@ -106,8 +110,9 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `status` tinytext NOT NULL,
   `address` tinytext NOT NULL,
   `phone` tinytext NOT NULL,
-  `comment` tinytext NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+  `comment` tinytext NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Дамп данных таблицы `orders`
@@ -127,7 +132,7 @@ INSERT INTO `orders` (`id`, `user_id`, `name`, `email`, `body`, `status`, `addre
 --
 
 CREATE TABLE IF NOT EXISTS `products` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `cat_id` int(11) NOT NULL,
   `name` tinytext NOT NULL,
   `body` text NOT NULL,
@@ -139,8 +144,9 @@ CREATE TABLE IF NOT EXISTS `products` (
   `status` tinytext NOT NULL,
   `user_id` tinytext NOT NULL,
   `putdate` date NOT NULL,
-  `showhide` enum('show','hide') NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8;
+  `showhide` enum('show','hide') NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=42 ;
 
 --
 -- Дамп данных таблицы `products`
@@ -175,14 +181,15 @@ INSERT INTO `products` (`id`, `cat_id`, `name`, `body`, `price`, `product_code`,
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` tinytext NOT NULL,
   `password` tinytext NOT NULL,
   `name` tinytext NOT NULL,
   `blockunblock` enum('block','unblock') NOT NULL,
   `date_reg` date NOT NULL,
-  `lastvisit` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+  `lastvisit` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Дамп данных таблицы `users`
@@ -194,80 +201,6 @@ INSERT INTO `users` (`id`, `email`, `password`, `name`, `blockunblock`, `date_re
 (3, 're@fs.ru', 'name', '123', 'unblock', '2016-05-16', '2016-05-16 10:32:40'),
 (4, 're@fs.ru', 'fga', '123', 'unblock', '2016-05-16', '2016-05-16 10:36:56');
 
---
--- Индексы сохранённых таблиц
---
-
---
--- Индексы таблицы `categories`
---
-ALTER TABLE `categories`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `comments`
---
-ALTER TABLE `comments`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `maintexts`
---
-ALTER TABLE `maintexts`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `orders`
---
-ALTER TABLE `orders`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `products`
---
-ALTER TABLE `products`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT для сохранённых таблиц
---
-
---
--- AUTO_INCREMENT для таблицы `categories`
---
-ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT для таблицы `comments`
---
-ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=141;
---
--- AUTO_INCREMENT для таблицы `maintexts`
---
-ALTER TABLE `maintexts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT для таблицы `orders`
---
-ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT для таблицы `products`
---
-ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=49;
---
--- AUTO_INCREMENT для таблицы `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -6,7 +6,7 @@
 		$filterArr=array('');
 		$error[]=(empty($_POST['name']))?"Поле Name не заполнено":'';
 		$error[]=(empty($_POST['email']))?"Поле email не заполнено":'';
-		$error[]=(empty($_POST['password']))?"Поле Отзыв не заполнено":'';
+		$error[]=(empty($_POST['area']))?"Поле Отзыв не заполнено":'';
 		$errors=array_diff($error, $filterArr);
 		if(!empty($errors)){
 			foreach($errors as $err){
@@ -30,7 +30,7 @@
 	}
 ?>
 		<h3>Отзывы:</h3><br>
-		<form name="comments" action="comments.php" method="post">  
+		<form name="comments" action="comment.php" method="post">  
 		<b>Имя:</b> <br/><input name="name" type="text" value="<?=$_POST['name']?>"><br> <br/> 
 		<b>E-mail:</b> <br/><input name="email" type="text" value="<?=$_POST['email']?>"><br><br/>  
 		<b>Сообщение:</b><br/><textarea class="ckeditor form-control" rows="3" name="area"><?=$_POST['area']?></textarea><br/> <br/> 
